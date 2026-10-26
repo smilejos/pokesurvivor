@@ -1,183 +1,268 @@
-# PokéSurvivor · Mundo Misterioso
+# PokéSurvivor · 不可思議的迷宮
 
-Bullet-heaven con Pokémon al estilo de Survivor.io y Megabonk, con sprites de
-*Pokémon Mundo Misterioso*, capa roguelike, **966 Pokémon de las 9 generaciones**,
-shinies y gacha por región. Música y efectos compuestos para el juego.
+**繁體中文查閱手冊：**[開啟 GitHub Pages](https://smilejos.github.io/pokesurvivor/)。本站首頁會導向「性格與特性查閱手冊」。
 
-HTML + CSS + JavaScript vanilla sobre Canvas 2D. Sin build, sin dependencias y
-**todo local**: no necesita internet para jugar.
+以寶可夢為主題的生存動作遊戲，玩法結合《Survivor.io》、《Megabonk》式的自動攻擊與 Roguelike 成長。採用《寶可夢 不可思議的迷宮》風格的像素精靈圖，收錄九個世代共 **966 種寶可夢**，包含色違收藏、地區轉蛋、性格、特性與最多 4 人合作。音樂與音效為遊戲原創。
 
-> **Autoría / Authorship**
+使用 **HTML、CSS、原生 JavaScript 與 Canvas 2D**。已有可直接執行的遊戲檔案，遊玩前不必安裝套件或建置；下載完整專案後可離線單人遊玩。雲端帳號、好友、排行榜及合作連線需要網路。
+
+> **作者與著作權聲明**
 >
-> PokéSurvivor (su código y su música original) lo ha escrito y es de
-> **Jonathan Piera Torregrosa**, dueño de esta cuenta (JPTER78) y de pokesurvivor.com.
-> The source code and original music of PokéSurvivor are written and owned by
-> **Jonathan Piera Torregrosa**, owner of this GitHub account (JPTER78) and of
-> pokesurvivor.com. Google copyright removal request **4-2352000042234**
-> (against pokesurvivor.co) was submitted by me.
+> PokéSurvivor 的程式碼與原創音樂由 **Jonathan Piera Torregrosa（JPTER78）**撰寫並擁有；他是原始 GitHub 帳號與 pokesurvivor.com 的持有人。針對 pokesurvivor.co 提出的 Google 著作權移除申請，案號為 **4-2352000042234**，由原作者本人提交。
 
-> **Aviso sobre criptomonedas / Crypto disclaimer**
+> **加密貨幣聲明**
 >
-> PokéSurvivor **no tiene ninguna criptomoneda, token ni NFT oficial**, y yo no
-> he creado ninguno. Cualquier token que use el nombre del juego lo han creado
-> terceros. **No me hago cargo de ninguna compra, venta o inversión** que hagas
-> con ellos y nada de lo que hay aquí es una recomendación de inversión. El
-> juego es gratis y lo seguirá siendo.
->
-> PokéSurvivor has **no official cryptocurrency, token or NFT**, and I have not
-> created any. Any token using the game's name was created by third parties.
-> **I take no responsibility for any purchase, sale or investment** you make
-> with them, and nothing here is investment advice. The game is free and will
-> stay free.
+> PokéSurvivor **沒有任何官方加密貨幣、代幣或 NFT**，原作者也未建立任何相關項目。使用遊戲名稱的代幣均由第三方建立；原作者不對相關買賣或投資負責，本專案內容亦不構成投資建議。遊戲免費，並將持續免費提供。
 
-## Jugar
+## 開始遊玩
 
-Doble clic en `index.html`. Crea una cuenta o entra como invitado, haz el test
-de personalidad y a la mazmorra.
+- **線上遊玩：**[pokesurvivor.com](https://pokesurvivor.com)。這是原作者聲明的唯一官方網站。
+- **離線遊玩：**下載完整專案後，直接以瀏覽器開啟根目錄的 `index.html`。建立本機帳號，或以訪客身分試玩，完成開局個性問卷後即可進入迷宮。
+- **繁體中文：**可在「設定 → 畫面 → 語言」切換。遊戲支援西班牙文、英文、法文、義大利文、巴西葡萄牙文、簡體中文與繁體中文；未另行指定時會依瀏覽器語言選擇。
 
-| Tecla | Acción |
-|---|---|
-| `W` `A` `S` `D` / flechas | Moverse |
-| `1` `2` `3` `4` | Elegir el movimiento activo |
-| `Q` / `E` | Ciclar movimientos |
-| `Esc` / `P` | Pausa |
+**想保留進度請使用帳號；訪客進度僅存在記憶體中，不會儲存。** 本機帳號與雲端帳號的差異見[存檔與雲端同步](#存檔與雲端同步)。
 
-**En móvil o tablet** (en horizontal): pon el dedo en cualquier sitio y arrastra
-para moverte (el joystick aparece donde tocas), toca un ataque de abajo para
-cambiarlo y el botón de arriba a la derecha para pausar. Se puede instalar como
-app ("Añadir a pantalla de inicio"). En **Ajustes** hay sonido, calidad gráfica
-(con modo automático), números de daño, menos sacudidas, FPS y la cuenta.
+### 鍵盤與滑鼠
 
-El Pokémon ataca solo con el movimiento activo (o con todos los de un
-**vínculo**: cada legendario vencido deja fusionar movimientos para lanzarlos a
-la vez desde un solo hueco, hasta 4). Las rocas, cofres y la hierba
-alta se rompen; las paredes y los árboles bloquean los disparos enemigos; el
-agua frena y la lava quema (también a los enemigos).
+| 操作 | 功能 |
+| --- | --- |
+| `W` `A` `S` `D`／方向鍵 | 移動 |
+| `1` `2` `3` `4` | 選擇目前使用的招式槽 |
+| `Q`／`E` | 切換上一個／下一個招式槽 |
+| `Tab` | 切換下一個招式槽 |
+| `5` `6` `7` `8` | 使用對應欄位的寶珠 |
+| `Esc`／`P` | 暫停 |
+| `R` | 在選牌畫面重抽（須有可用次數） |
+| 移動滑鼠 | 啟用「手動瞄準」後，指定攻擊方向 |
 
-En el mapa hay **altares de poder**, **manantiales** que curan, **cofres con
-candado** (quédate a su lado unos segundos) y **trampas** que también dañan a
-los enemigos. A veces se abre una **grieta**: entra y lucharás contra un
-**legendario** en una arena aparte.
+寶可夢會自動使用目前招式槽內的招式。合作模式倒下後，`Q`／`E`／`Tab` 可切換觀戰隊友。
 
-Hay **tabla de tipos** (un Rayo Burbuja le quita más a un Charmander) y,
-de vez en cuando, **climas** (sol, lluvia, arena, nieve, niebla) que potencian
-unos tipos y debilitan otros.
+### 手機、平板與控制器
 
-Cada día hay **misiones** (y semanales) que dan tickets y monedas; los
-**logros** dan medallas y títulos, y tu **perfil** enseña tus 3 Pokémon
-favoritos, tus marcas y tus medallas. En las runs encuentras **objetos** (Restos,
-Cinta Elección...) y tus movimientos **evolucionan** al máximo nivel. Los
-enemigos tienen personalidad: curan, ponen escudos, llaman a su manada o atacan
-con aviso en el suelo.
+手機與平板建議橫向遊玩。觸碰畫面並拖曳即可移動，虛擬搖桿會出現在觸碰位置；點選下方招式切換攻擊，點右上方按鈕暫停。啟用「設定 → 無障礙 → 手動瞄準」後，左半邊控制移動、右半邊控制瞄準，放開右側搖桿便恢復自動瞄準。支援的瀏覽器可透過「加入主畫面」安裝。
 
-Las **mejoras** son de cada Pokémon. El **gacha** va con **tickets** que se
-ganan jugando (×1 de algunos Pokémon, ×10 de jefes y legendarios), y se tira
-en una tragaperras pixel art.
+控制器使用瀏覽器 Gamepad API 的標準配置：左搖桿／方向鍵移動，`LB`／`RB`（或 `LT`／`RT`）切換招式，`Start` 暫停，`X` 使用選中的寶珠、`Y` 切換寶珠。選單中以 `A` 確認、`B` 返回；啟用手動瞄準後可使用右搖桿瞄準。控制器與震動可在設定中調整。
 
-Cada enemigo tiene 1/4096 de salir **shiny**: brilla, una flecha en el borde de
-la pantalla te dice dónde está, y si lo derrotas te lo quedas. En el gacha sale
-shiny 1 de cada 100 tiradas. En la colección eliges tu compañero en versión
-normal o shiny.
+設定亦提供音量、畫質與自動畫質、傷害數字、減少畫面震動及 FPS 顯示。瀏覽器需要第一次點擊後才會播放音樂；音量與靜音也可透過右上角喇叭或暫停選單調整。
 
-La música suena tras el primer clic (los navegadores no dejan reproducir sonido
-antes). Volumen y silencio: botón del altavoz arriba a la derecha, o en la pausa.
+## 玩法與成長
 
-El guardado vive en el `localStorage` del navegador: si borras los datos del
-sitio, se pierde.
+### 生存、招式與迷宮探索
 
-En `videos/` hay grabaciones del juego (con su música): un combate contra un
-jefe, la captura de un shiny salvaje y un shiny en el gacha.
+移動躲避敵人、收集經驗並在升級時選擇招式或能力加成。招式達到最高等級且滿足進化條件後，可以進化為名稱帶有「+」、金色外框的強化版本。永久升級以每種寶可夢分別購買，亦可解鎖第二個初始招式。
 
-## Guardado en la nube y publicación
+擊敗裂縫中的傳說寶可夢可取得**羈絆**，將多個招式合併到同一槽，選中該槽便能同時施放；每組最多 4 個招式，合併也會騰出招式槽。
 
-- **Base de datos (Firebase):** cuentas con nombre + contraseña o Google, y la
-  partida se sigue en cualquier ordenador. Pasos en [docs/FIREBASE.md](docs/FIREBASE.md).
-  Sin configurar, el juego guarda sólo en el navegador, como antes.
-- **Jugar con amigos (hasta 4) y ranking:** con cuenta en la nube, menú
-  **Amigos** (añadir por apodo, invitar a tu sala) y **Ranking** (tiempo
-  aguantado: solo o grupo, de hoy a histórico, amigos, por Pokémon).
-- **Publicar gratis en GitHub Pages:** [docs/PUBLICAR.md](docs/PUBLICAR.md).
-- Si se juega en dos ordenadores a la vez o sin conexión, las partidas se
-  **fusionan**: las colecciones se unen (nunca se pierde un Pokémon ni un
-  shiny), mejoras y estadísticas se quedan con el máximo, y monedas y
-  compañero con la versión más reciente. Los cambios de otro ordenador llegan
-  en directo.
+迷宮包含可破壞的岩石、寶箱與高草；牆壁及樹木可阻擋敵方投射物，水域使角色減速，岩漿則會灼傷玩家與敵人。地圖上亦有力量祭壇、治療泉水、需要停留一段時間解鎖的寶箱，以及也能傷害敵人的陷阱。出現裂縫時，可進入獨立競技場挑戰傳說寶可夢。
 
-## Licencia
+敵人會治療、架盾、呼叫同伴，部分攻擊會先在地面顯示警示。晴天、雨天、沙暴、下雪與濃霧會改變戰況；不同屬性的招式及寶可夢也會受到天氣影響。
 
-Código bajo [PolyForm Noncommercial 1.0.0](LICENSE-NONCOMMERCIAL.md) desde el
-14-10-2026: se puede usar, estudiar y modificar, pero **no con fines
-comerciales** (ni vender el juego ni cobrar nada dentro de él). Las versiones
-hasta el commit `b297089` se publicaron bajo MIT. Los sprites (CC BY-NC 4.0),
-la fuente (OFL) y las marcas de Pokémon tienen sus propias condiciones: ver
-[LICENSE](LICENSE) y [CREDITS.md](CREDITS.md). Proyecto de fan sin ánimo de
-lucro.
+本作採用調整過的屬性相剋：單一防守屬性的弱點、抗性與原作免疫，分別換算為 **×1.6、×0.6、×0.3**；雙屬性相乘後限制在 **0.3～2.4 倍**，不能直接套用本傳倍率。
 
-**La única web oficial es [pokesurvivor.com](https://pokesurvivor.com).** El
-juego es y será gratis: si alguien te pide pagar, no somos nosotros.
+存活至 **30 分鐘**會進入阿爾宙斯的審判。阿爾宙斯持有隨機石板以決定屬性，本身無法擊倒，但可累積對它造成的傷害；第 **35 分鐘**會破壞所有玩家的攜帶物品。結算可查看各招式的傷害與每秒傷害，合作模式可切換查看各隊友的統計。
 
-## Estructura
+### 道具、商店與寶珠
 
-```
-index.html              pantallas + orden de carga
-css/style.css           interfaz estilo Mundo Misterioso
-assets/pokemon/{dex}/   hojas de sprites PMD (Idle, Walk, Attack, Shoot, Charge, Hurt, Faint)
-assets/pokemon/{dex}/s/ las mismas en versión shiny
-assets/fonts/           Pixelify Sans (OFL) y su versión con números redibujados (tools/make_font.py)
+- **攜帶物品：**局內可取得吃剩的東西、講究頭帶等物品，影響戰鬥與招式搭配。
+- **變隱龍商店：**使用寶可幣購買薄荷、特性膠囊、隱藏特性膠囊，以及每日輪替的 8 種招式學習器。商店以西班牙時間（`Europe/Madrid`）換日。
+- **招式學習器：**消耗後永久教會該寶可夢一個可學習的招式，能加入升級候選與初始招式選項；仍受物種學習範圍限制。
+- **寶珠：**可由寶箱、頭目或擊倒敵人取得的一次性道具，用於催眠、減速、擊退或增益自己與附近隊友。最多攜帶 4 種，每種 3 顆；頭目與傳說寶可夢受到的部分效果較弱。
+
+### 收藏、轉蛋與色違
+
+轉蛋依九個地區分池，使用遊玩取得的普通票券或十連票券，介面提供 **十連抽與百連抽**。十連抽至少有一隻 4★ 以上；百連抽由十次十連抽組成，各次保底分別計算。重複寶可夢會轉換為寶可幣。
+
+野生敵人的基礎色違出現率為 **1/4096**。色違會發光，畫面邊緣的箭頭會指引位置；擊敗後即可加入收藏。轉蛋每次抽選的基礎色違機率為 **1%**；完成該地區圖鑑（包含傳說寶可夢）後取得閃耀護符，該地區轉蛋的色違機率提高至 **2%**。收藏中可選擇普通或色違版本作為夥伴。
+
+每日／每週任務提供票券與寶可幣，成就可解鎖勳章與稱號。個人檔案會展示 3 隻最愛寶可夢、紀錄與勳章。
+
+## 性格與特性查閱手冊
+
+完整規則、數值、觸發條件與查核來源收錄於 **[PokéSurvivor 性格與特性查閱手冊](pokesurvivor-性格與特性查閱手冊.html)**。直接以瀏覽器開啟即可離線閱讀；搜尋與篩選需要 JavaScript，來源連結則需要網路。手冊支援繁體中文、英文、ID 與圖鑑編號搜尋，並可匯出特性及物種查詢結果為 CSV，或列印完整報告。
+
+手冊固定查核於 **2026-10-26**、提交 `680c3e12c670a0f131ec846c43248372853389b1`。它記錄該版本的程式行為與驗證範圍，未確認線上部署版本，亦未完成真實多人連線實測；後續程式變更需重新核對。
+
+### 戰鬥性格與開局問卷
+
+遊戲有 **25 種戰鬥性格**：其中 20 種將一項能力乘 **1.10**、另一項乘 **0.90**，另有 5 種中性性格不改變能力；HP 不受影響。可調整的能力為攻擊、特攻、防禦、特防與速度。
+
+性格修改的是能力數值，並非直接修改最終傷害。例如防禦增加 10%，還需經過本作防禦公式換算，不能視為受到傷害減少 10%。開局問卷另有 **16 種個性標籤**，只用於推薦夥伴，與戰鬥性格分開。
+
+### 特性的實際效果
+
+| 類別 | 數量 | 本作行為 |
+| --- | --- | --- |
+| 有專門效果的特性 | 165 | 依程式定義提供傷害、回復、天氣、移速等效果；包含共用效果的別名 |
+| 使用通用效果的特性 | 106 | 自身**第一屬性**的招式傷害 ×1.08，未另外實作原作效果 |
+| 專門效果另附通用加成 | 上述 165 種中的 55 種 | 專門效果之外，第一屬性招式傷害再乘 ×1.08 |
+| 物種特性槽資料 | 966 種寶可夢 | 列出普通特性一、普通特性二與隱藏特性；部分槽位為空 |
+
+特性共 **271 種**。第一屬性指物種屬性清單的第一項，第二屬性不自動享有通用加成。各傷害倍率相乘，例如 ×1.20 再乘 ×1.08，結果為 **×1.296**。
+
+**請以本作手冊為準，勿依特性名稱套用本傳效果。** 例如氣閘、毒療與畫皮在這個查核版本中都只有通用加成；隱藏特性也只是取得槽位，並非額外強化。結實的首用計時、穿透的破盾順序、天氣直接扣血及部分特性的合作模式差異，請參閱手冊的「差異與未確認事項」。
+
+### 初始指派與更改方式
+
+初始性格與特性以**存檔建立值與圖鑑編號**固定雜湊指派，不會每局重抽。同一存檔、同一圖鑑編號的普通與色違版本共用設定。有隱藏特性槽時，其設計取得率約 **5%**；同時有兩個普通槽與隱藏槽時，設計比例約為 **47.5%／47.5%／5%**。
+
+在收藏的寶可夢頁面可查看及更改性格、特性，需消耗商店道具：
+
+| 道具 | 價格（寶可幣） | 用途 |
+| --- | --- | --- |
+| 薄荷 | 1,500 | 選擇其他任一戰鬥性格 |
+| 特性膠囊 | 1,500 | 改為另一個普通特性槽；可從隱藏槽改回普通槽，不能選隱藏槽 |
+| 隱藏特性膠囊 | 5,000 | 改為該物種其他任一有效槽，包含隱藏槽 |
+
+膠囊只能在該物種既有槽位中切換。手冊列出的是物種可用資料，個別帳號目前的性格與特性仍以遊戲內收藏頁面為準。
+
+## 存檔與雲端同步
+
+| 模式 | 儲存方式 | 適用情境 |
+| --- | --- | --- |
+| 本機帳號 | 瀏覽器 `localStorage` | 直接開啟 `index.html`、未設定雲端或未獲允許的主機名稱 |
+| 雲端帳號 | 本機副本＋Firebase | 使用名稱與密碼或 Google 登入，可跨裝置接續進度 |
+| 訪客 | 僅記憶體 | 臨時試玩，進度不會儲存 |
+
+本機資料會即時寫入瀏覽器；清除網站資料會失去該瀏覽器的本機存檔。雲端帳號也保留本機副本，離線時可繼續使用已有進度。
+
+**目前雲端上傳由「儲存」按鈕、登出或遊戲更新重新載入前觸發，沒有定時自動上傳，也不會在關閉分頁時自動上傳。** 換裝置前請先按「儲存」並確認同步完成；只有本機副本的進度不能在另一台裝置取得。
+
+登入、重新連線與同步時會合併存檔：收藏合併，升級與部分統計取最大值，性格與特性等選擇依時間戳取較新的設定；票券、寶可幣及消耗品使用收支紀錄合併。同一瀏覽器的分頁間亦會同步本機變更。
+
+自行架設雲端功能請參閱 [Firebase 設定文件](docs/FIREBASE.md)，並搭配目前的 `js/core/db.js`、`firestore.rules` 與 `database.rules.json` 核對；舊文件中的自動存檔敘述可能與目前程式不同。另行部署時須使用自己的 Firebase 專案，並調整程式中的主機名稱限制。
+
+## 好友、合作與排行榜
+
+雲端帳號可透過「好友」依暱稱加入好友、邀請入房，進行**最多 4 人合作**。排行榜包含存活時間與對阿爾宙斯造成的傷害，可依單人／合作、日期區間、好友及寶可夢等條件查看。
+
+合作以房主為中心，透過 WebRTC 資料通道傳送遊戲狀態，Firebase Realtime Database 處理房間與連線協商。程式先嘗試直接連線，失敗時可向既有服務請求 TURN 臨時憑證；憑證不可用時仍依賴直接連線。**Realtime Database 的遊戲資料轉送目前停用**，實際可否連線取決於網路環境與服務設定。
+
+二進位訊框、舊版 JSON 相容與驗證方式見[多人通訊協定](docs/MULTIPLAYER_PROTOCOL.md)；自架 TURN 的既有設定見 [infra/coturn/README.md](infra/coturn/README.md)。
+
+## 專案結構
+
+```text
+index.html                         產生後的遊戲入口
+dev.html                           開發入口與畫面原始檔（修改此檔）
+css/style.css                      遊戲介面與響應式樣式
+assets/
+  pokemon/{dex}/                   普通版精靈圖與動畫圖集
+  pokemon/{dex}/s/                 色違版精靈圖
+  fonts/                           Pixelify Sans 與修改數字字形的版本
 js/
-  net/      social (apodo, amigos, salas), net (WebRTC + relé),
-            coop (partida en grupo), ranking
-  core/     util, db (guardado), audio (sintetizador + efectos), input,
-            sprites (animador PMD), camera
-  data/     pokedex*, sprites-meta*, moves, starters (+ test), enemies,
-            upgrades, music (partituras)
-  world/    tiles (pixel art en código), world (terreno, objetos, colisiones)
-  entities/ player, enemy, projectile, pickup, fx
-  systems/  combat, spawner, levelup, gacha
-  ui/       icons (pixel art), ui, hud, login, test, menu, gacha-ui, run-ui,
-            social-ui, ranking-ui
-  game.js   flujo y bucle principal
-tools/      scripts que regeneran los ficheros marcados con *
+  core/                            輸入、觸控、控制器、存檔、音訊、語言與更新
+  data/                            圖鑑、招式、性格、特性、商店、任務與翻譯原始資料
+  lang/                            由工具產生的各語言字典
+  entities/                        玩家、敵人、投射物、拾取物與特效
+  world/                           地圖區塊、地形、物件與碰撞
+  systems/                         戰鬥、生成、升級、天氣、裂縫、轉蛋與審判
+  net/                             好友、房間、WebRTC、合作、編碼與排行榜
+  ui/                              選單、收藏、商店、轉蛋、設定與戰鬥介面
+  game.js                          遊戲流程與主迴圈
+  main.js                          啟動與維護模式設定
+  app.min.js                       建置產生的壓縮主程式
+pokesurvivor-性格與特性查閱手冊.html  可離線使用的繁體中文查閱手冊
+tests/                             存檔、語言、通訊與資料庫規則測試
+tools/                             建置、資料下載、匯出與靜態頁面產生工具
+docs/                              部署、網域、Firebase、語言與通訊文件
+infra/coturn/                      TURN 服務與憑證服務設定
+version.json                       建置產生的版本識別資料
 ```
 
-`*` = generado. Para rehacerlos (necesita Python 3 + Pillow e internet, sólo esa vez):
+## 開發與建置
 
+### 本機開發
+
+可直接開啟 `dev.html`，以分檔原始碼進行除錯。若需要 HTTP 環境，安裝 Python 3 後在專案根目錄執行：
+
+```sh
+python3 -m http.server 8000 --bind 127.0.0.2
 ```
-python tools/fetch_sprites.py    # sprites normal y shiny + js/data/sprites-meta.js
-                                 # (~20 min; se puede cortar y relanzar: usa tools/cache/)
-python tools/fetch_pokedex.py    # js/data/pokedex.js
-python tools/fetch_credits.py    # CREDITS.md
+
+開啟 `http://127.0.0.2:8000/dev.html`。此位址不在預設雲端主機允許清單中，因此使用本機存檔模式。
+
+### 產生發佈檔案
+
+**編輯 `dev.html`，不要手動修改產生後的 `index.html` 或 `js/app.min.js`。** 建置需要 Node.js、npm／npx 與 Python 3；`npx` 首次取得壓縮及混淆工具時需要網路。
+
+依序執行：
+
+```sh
+node tools/build.js
+node tools/export_data.js
+python3 tools/make_seo_pages.py
 ```
 
-## Notas de implementación
+建置會依載入順序合併、壓縮並混淆主程式，產生 `index.html`、`js/app.min.js`、`js/lang/` 字典與 `version.json`；資料匯出及靜態頁面工具則產生公開圖鑑、攻略等頁面與英文入口。`--expose` 僅供測試，不應用於正式發佈。
 
-- **Sprites PMD.** Columnas = fotogramas, filas = 8 direcciones (Down, DownRight,
-  Right, UpRight, Up, UpLeft, Left, DownLeft — verificado con los `-Offsets.png`).
-  Cada animación tiene su propio tamaño de fotograma, así que se alinean por el
-  **ancla al suelo** sacada del `-Shadow.png`; sin eso el sprite saltaría al atacar.
-- **Coordenadas.** `(x, y)` de una entidad son sus **pies**. Las colisiones
-  ocurren en el plano del suelo; los proyectiles vuelan en ese plano y se dibujan
-  elevados con su sombra debajo.
-- **Mundo.** Chunks de 16×16 tiles: los *datos* (terreno, objetos) son baratos y
-  se generan siempre; la *imagen* se hornea a resolución de arte escribiendo en un
-  `ImageData` (~4 ms por chunk en Chrome) y sólo para los visibles.
-- **Rendimiento.** Rejilla espacial de enemigos reconstruida cada frame. Con 420
-  enemigos, simulación + render completo ≈ 3 ms por frame en Chrome.
-- **Metadatos en `.js`, no `.json`**, porque `fetch()` está bloqueado en `file://`.
-- **Shiny.** Los shiny de SpriteCollab son el mismo dibujo con otra paleta; están
-  en `s/` y sólo 30 tienen geometría distinta (campo `sa` en los metadatos).
-  Las hojas se guardan como PNG con paleta exacta: misma imagen, la mitad de peso.
-- **Audio.** Sintetizador Web Audio con planificador anticipado (programa las
-  notas 150 ms por delante) y reverb por convolución con un impulso generado.
-  Las partituras están en `js/data/music.js` en un formato de texto propio.
-  Los efectos tienen separación mínima entre repeticiones y un tope de voces,
-  para que 400 enemigos golpeados a la vez no saturen.
-- **Iconos.** Mapas de caracteres convertidos a canvas y data URLs; siempre a
-  múltiplos enteros de su tamaño para que el píxel quede limpio.
+玩家端每 5 分鐘檢查版本。一般更新會等待戰局結束，在適當的選單狀態顯示倒數，儲存待同步資料後重新載入；應保留 `js/core/updater.js` 與建置中的版本檔產生流程。
 
-## Créditos y licencia
+### 測試與翻譯
 
-Sprites de [SpriteCollab](https://github.com/PMDCollab/SpriteCollab) bajo
-**CC BY-NC 4.0** — uso **no comercial** y con atribución; la lista de artistas
-está en [`CREDITS.md`](CREDITS.md). Pokémon es propiedad de Nintendo, Creatures
-Inc. y GAME FREAK. Proyecto de fan sin ánimo de lucro.
+現有單元測試可使用 Node.js 內建測試執行器，無須根目錄 `package.json`：
+
+```sh
+node --test tests/*.test.cjs
+```
+
+測試涵蓋存檔合併、語言、通訊編碼與排行榜等邏輯；不能取代實際登入、跨裝置同步或多人遊玩驗證。`tests/*.emu.cjs` 則須在對應的 Firebase Emulator 中另行執行，操作範例位於各測試檔開頭。
+
+新增遊戲文字時，更新英文字典及 `js/data/lang-updates.js` 的其他五種語言，再檢查缺漏：
+
+```sh
+node tools/build_langs.js --faltan --todo
+node --test tests/i18n.test.cjs
+```
+
+字典輸出位於 `js/lang/`，應由工具重新產生。語言架構、翻譯貢獻者與來源紀錄見[在地化文件](docs/LOCALIZATION.md)。
+
+### 重新取得精靈圖與圖鑑資料
+
+已有資產時不必重新下載。需要重建時，使用 Python 3；精靈圖工具另需 Pillow，下載過程需要網路：
+
+```sh
+python3 tools/fetch_sprites.py    # 普通／色違精靈圖及 sprites-meta.js
+python3 tools/fetch_pokedex.py    # pokedex.js
+python3 tools/fetch_credits.py    # CREDITS.md
+```
+
+精靈圖下載支援中斷後重跑，會重用 `tools/cache/`。產生式資料如 `pokedex.js`、`sprites-meta.js` 應透過對應工具重建，並確認重建結果與目前遊戲資料相符。
+
+## 實作重點
+
+- **精靈動畫：**PMD 圖集以欄表示影格、列表示 8 個方向。每種動畫的影格尺寸可能不同，以陰影資料取得的地面錨點對齊，避免攻擊時跳動。
+- **座標與碰撞：**實體的 `(x, y)` 代表腳底位置。碰撞在地面平面計算；投射物亦沿此平面移動，繪製時再提高位置並加上陰影。
+- **世界與效能：**地圖以 16×16 圖塊為一個區塊，地形與物件資料分開儲存，只為可見區塊產生快取影像。敵人使用每幀重建的空間格網加速鄰近查詢。
+- **資料載入：**主要資料放在 `.js` 中，以支援直接開啟 `file://` 的離線遊玩方式，避免依賴該環境下受限的 `fetch()`。
+- **色違資產：**一般放在同物種的 `s/` 目錄；不同幾何形狀由中繼資料標示。圖集以無損索引色 PNG 儲存，減少體積。
+- **音訊：**以 Web Audio 合成器播放樂譜與音效，預先排程約 150 毫秒，並使用產生的脈衝響應做殘響；音效有重複間隔及同時發聲上限。
+- **像素圖示：**字元圖樣轉為 Canvas 與資料網址，依整數倍縮放以維持像素清晰。
+
+## 部署與延伸文件
+
+本儲存庫以 `.github/workflows/pages.yml` 發佈查閱手冊至 GitHub Pages。`main` 分支的手冊、`pages/` 或該工作流程更新時會自動部署，也可從 Actions 手動執行。GitHub 儲存庫的「Settings → Pages → Source」須選擇「GitHub Actions」。
+
+發佈內容為 `pages/index.html`（首頁轉址）與根目錄的 `pokesurvivor-性格與特性查閱手冊.html`。此流程使用獨立的發佈目錄，保留遊戲本身的 `index.html`，亦不將上游的 `CNAME` 網域設定加入手冊網站。
+
+以下文件保留原有語言，部分較早的操作與功能說明需搭配目前程式確認：
+
+- [GitHub Pages 發佈方式](docs/PUBLICAR.md)
+- [Firebase 帳號、存檔與資料庫設定](docs/FIREBASE.md)
+- [網域設定](docs/DOMINIO.md)
+- [搜尋引擎與靜態頁面](docs/SEO.md)
+- [多語言架構與貢獻來源](docs/LOCALIZATION.md)
+- [多人通訊協定](docs/MULTIPLAYER_PROTOCOL.md)
+- [完整遊戲設計文件](GDD.md)
+
+## 授權與致謝
+
+程式碼與原創音樂自 **2026-10-14** 起，於提交 `b297089` 之後的版本採用 [PolyForm Noncommercial 1.0.0](LICENSE-NONCOMMERCIAL.md)。可依授權使用、研究、修改與分享，但不得作商業用途，包括販售遊戲、收取遊玩或遊戲內費用，以及放置廣告。**截至 `b297089`（含）的舊版本**仍適用當時的 MIT 授權；完整條件見 [LICENSE](LICENSE)。
+
+- **精靈圖：**來自 [SpriteCollab](https://github.com/PMDCollab/SpriteCollab)，採 **CC BY-NC 4.0**，須署名且限非商業用途。各圖像作者見 [CREDITS.md](CREDITS.md)。
+- **字型：**Pixelify Sans，採 SIL Open Font License 1.1，詳見 [assets/fonts/OFL.txt](assets/fonts/OFL.txt)；修改數字字形的工具為 `tools/make_font.py`。
+- **圖鑑資料：**取自 PokéAPI。
+- **翻譯：**各語言原始貢獻者與整合來源列於 [docs/LOCALIZATION.md](docs/LOCALIZATION.md)。
+
+Pokémon 及相關角色與名稱屬於 Nintendo、Creatures Inc.、GAME FREAK 與 The Pokémon Company。本專案為非營利粉絲作品，未獲上述公司背書或認可。
+
+**原作者的唯一官方網站為 [pokesurvivor.com](https://pokesurvivor.com)。遊戲免費，並將持續免費；要求付款的網站並非原作者官方網站。**
